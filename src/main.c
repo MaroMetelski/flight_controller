@@ -6,8 +6,11 @@
 
 #include <zephyr.h>
 #include <device.h>
+#include <logging/log.h>
 #include <devicetree.h>
 #include <drivers/gpio.h>
+
+LOG_MODULE_REGISTER(main);
 
 /* 1000 msec = 1 sec */
 #define SLEEP_TIME_MS   1000
@@ -27,10 +30,10 @@
 #define PIN1	DT_GPIO_PIN(LED1_NODE, gpios)
 #define FLAGS1	DT_GPIO_FLAGS(LED1_NODE, gpios)
 #endif
-/* A build error here means your board isn't set up to blink an LED. */
 
 void main(void)
 {
+	LOG_INF("Hello world!");
 	const struct device *led1;
 	const struct device *led0;
 	bool led_is_on = true;
