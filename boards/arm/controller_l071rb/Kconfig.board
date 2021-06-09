@@ -1,0 +1,8 @@
+# controller_f072rb board
+#
+# Copyright (c) 2021 Marek Metelski
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_CONTROLLER_L071RB
+	bool "Flight controller based on f103rb microcontroller"
+	depends on SOC_STM32L071XB

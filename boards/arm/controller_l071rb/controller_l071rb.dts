@@ -1,0 +1,52 @@
+
+/dts-v1/;
+#include <st/l0/stm32l071Xb.dtsi>
+#include <st/l0/stm32l071r(b-z)tx-pinctrl.dtsi>
+
+/ {
+  model = "controller l071rb";
+  compatible = "metelski,controller-l071rb";
+
+  chosen {
+    zephyr,sram = &sram0;
+    zephyr,flash = &flash0;
+  };
+
+  aliases {
+    led0 = &green_led;
+    led1 = &red_led;
+  };
+
+  leds {
+    compatible = "gpio-leds";
+    green_led: led_0 {
+      gpios = <&gpioc 10 GPIO_ACTIVE_HIGH>;
+      label = "LED green";
+    };
+    red_led: led_1 {
+      gpios = <&gpioc 11 GPIO_ACTIVE_HIGH>;
+      label = "LED red";
+    };
+  };
+
+};
+
+&clk_hsi {
+  status = "okay";
+};
+
+&pll {
+  div = <2>;
+  mul = <4>;
+  clocks = <&clk_hsi>;
+  status = "okay";
+};
+
+&rcc {
+  clocks = <&pll>;
+  clock-frequency = <DT_FREQ_M(32)>;
+  ahb-prescaler = <1>;
+  apb1-prescaler = <1>;
+  apb2-prescaler = <1>;
+  status = "okay";
+};

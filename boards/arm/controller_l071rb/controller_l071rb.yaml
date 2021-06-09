@@ -1,0 +1,17 @@
+identifier: controller_l071rb
+name: Flight Controller L071RB
+type: mcu
+arch: arm
+ram: 20
+flash: 128
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - adc
+  - spi
+  - gpio
+  - i2c
+  - pwm
+  - watchdog

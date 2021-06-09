@@ -1,0 +1,28 @@
+manifest:
+  defaults:
+    remote: upstream
+  remotes:
+    - name: upstream
+      url-base: https://github.com/zephyrproject-rtos
+    - name: custom
+      url-base: https://github.com/MaroMetelski
+  projects:
+    - name: cmsis
+      remote: custom
+      revision: 215867ae005e432be1dbcb24c07735d051cd7d29
+      path: modules/hal/cmsis
+    - name: loramac-node
+      revision: 2cee5f7295ff0ff804bf06fea5de006bc7cd121e
+      path: modules/lib/loramac-node
+    - name: zephyr
+      revision: 45eca4ce10a83fffc0c66d9770380cd716150a42
+      path: zephyr
+      west-commands: scripts/west-commands.yml
+    - name: hal_st
+      revision: b52fdbf4b62439be9fab9bb4bae9690a42d2fb14
+      path: modules/hal/st
+    - name: hal_stm32
+      revision: 50283e0438d882a80fb681907664491c7042c817
+      path: modules/hal/stm32
+  self:
+    path: app

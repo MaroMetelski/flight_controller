@@ -1,0 +1,11 @@
+# controller_l071rb configuration
+#
+# Copyright (c) 2021 Marek Metelski
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_CONTROLLER_L071RB
+
+config BOARD
+	default "controller_l071rb"
+
+endif # BOARD_CONTROLLER_L071RB
