@@ -4,6 +4,8 @@
 #include <zephyr.h>
 #include <stdio.h>
 
+#include "battery.h"
+
 LOG_MODULE_REGISTER(controller, LOG_LEVEL_DBG);
 
 K_THREAD_STACK_DEFINE(controller_stack, 1024);
@@ -13,8 +15,12 @@ static void controller_thread_start(void *u1, void *u2, void *u3)
 {
 
 	LOG_INF("Controller starting...");
+	int32_t value;
 
 	while (true) {
+
+		value = battery_read();
+		LOG_INF("divider voltage: %d", value);
 		k_sleep(K_MSEC(1000));
 	}
 }
