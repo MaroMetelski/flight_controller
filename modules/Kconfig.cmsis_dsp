@@ -1,0 +1,7 @@
+config CMSIS_DSP_QUATERNIONMATH
+       bool "Quaternion Math Functions"
+       help
+         This option enables Quaternion Math Functions.
+         This is for custom cmsis module created from
+         CMSIS_5 develop branch with quaternion math support.
+         see: https://github.com/MaroMetelski/cmsis

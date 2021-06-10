@@ -1,0 +1,2 @@
+source "Kconfig"
+rsource "modules/Kconfig"
