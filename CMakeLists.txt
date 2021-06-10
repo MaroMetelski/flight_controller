@@ -9,5 +9,6 @@ project(app)
 target_sources(app PRIVATE src/main.c)
 target_sources(app PRIVATE src/controller.c)
 target_sources(app PRIVATE src/battery.c)
+target_sources(app PRIVATE src/imu.c)
 
 zephyr_include_directories(include)

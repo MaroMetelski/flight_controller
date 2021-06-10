@@ -30,7 +30,19 @@
       label = "LED red";
     };
   };
+};
 
+&i2c1 {
+  status = "okay";
+  pinctrl-0 = <&i2c1_scl_pb8 &i2c1_sda_pb9>;
+  clock-frequency = <I2C_BITRATE_STANDARD>;
+
+  mpu6050@68 {
+    compatible = "invensense,mpu6050";
+    reg = <0x68>;
+    status = "okay";
+    label = "MPU6050";
+  };
 };
 
 &adc1 {

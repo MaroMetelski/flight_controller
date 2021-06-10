@@ -5,22 +5,38 @@
 #include <stdio.h>
 
 #include "battery.h"
+#include "imu.h"
 
 LOG_MODULE_REGISTER(controller, LOG_LEVEL_DBG);
 
-K_THREAD_STACK_DEFINE(controller_stack, 1024);
+K_THREAD_STACK_DEFINE(controller_stack, 2048);
 static struct k_thread controller_thread;
+
+struct euler_angles position;
 
 static void controller_thread_start(void *u1, void *u2, void *u3)
 {
 
 	LOG_INF("Controller starting...");
 	int32_t value;
+	char message[100];
 
 	while (true) {
 
 		value = battery_read();
 		LOG_INF("divider voltage: %d", value);
+
+		imu_get_position(&position);
+		position.pitch *= 180.0 / PI;
+		position.roll *= 180.0 / PI;
+		position.yaw *= 180.0 / PI;
+
+		sprintf(message, "position: %.2f %.2f %.2f\n",
+			position.pitch,
+			position.roll,
+			position.yaw);
+		LOG_INF("%s", log_strdup(message));
+
 		k_sleep(K_MSEC(1000));
 	}
 }
