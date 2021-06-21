@@ -1,0 +1,11 @@
+menuconfig BCM
+       bool "enable BCM drivers"
+if BCM
+
+module = BCM
+module-str = bcm
+source "subsys/logging/Kconfig.template.log_config"
+
+rsource "Kconfig.sys"
+
+endif # BCM

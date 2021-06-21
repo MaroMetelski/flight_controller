@@ -1,0 +1,6 @@
+menu "Application options"
+
+rsource "modules/Kconfig"
+rsource "drivers/Kconfig"
+
+endmenu

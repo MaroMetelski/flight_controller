@@ -1,0 +1,4 @@
+config BCM_SYS
+       bool "BCM driver based on system timers"
+       help
+         "Enable BCM driver utilizing kernel system timers"

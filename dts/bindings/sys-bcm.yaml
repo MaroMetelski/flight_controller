@@ -1,0 +1,15 @@
+description: software generated BCM signal through system timers
+
+compatible: "sys-bcm"
+
+include: [base.yaml]
+
+properties:
+  label:
+    required: true
+
+  out-gpios:
+    type: phandle-array
+    required: false
+    description: >
+      GPIOs used as BCM signal output

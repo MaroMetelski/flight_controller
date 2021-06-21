@@ -21,8 +21,13 @@ static void controller_thread_start(void *u1, void *u2, void *u3)
 	int32_t value;
 	char message[100];
 
-	while (true) {
 
+	const struct device *dev = DEVICE_DT_GET(DT_NODELABEL(bcm_sys0));
+
+	if (!dev) {
+		LOG_ERR("Couldn't initialize BCM");
+	}
+	while (true) {
 		value = battery_read();
 		LOG_INF("divider voltage: %d", value);
 
@@ -36,7 +41,6 @@ static void controller_thread_start(void *u1, void *u2, void *u3)
 			position.roll,
 			position.yaw);
 		LOG_INF("%s", log_strdup(message));
-
 		k_sleep(K_MSEC(1000));
 	}
 }

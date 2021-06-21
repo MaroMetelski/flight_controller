@@ -1,4 +1,3 @@
-
 /dts-v1/;
 #include <st/l0/stm32l071Xb.dtsi>
 #include <st/l0/stm32l071r(b-z)tx-pinctrl.dtsi>
@@ -29,6 +28,14 @@
       gpios = <&gpioc 11 GPIO_ACTIVE_HIGH>;
       label = "LED red";
     };
+  };
+
+  bcm_sys0: bcm_sys {
+    compatible = "sys-bcm";
+    status = "okay";
+    label = "BCM_0";
+    out-gpios = <&gpioa 8 GPIO_ACTIVE_HIGH>,
+                <&gpioa 9 GPIO_ACTIVE_HIGH>;
   };
 };
 
@@ -69,7 +76,7 @@
 
 &rcc {
   clocks = <&pll>;
-  clock-frequency = <DT_FREQ_M(32)>;
+  clock-frequency= <DT_FREQ_M(32)>;
   ahb-prescaler = <1>;
   apb1-prescaler = <1>;
   apb2-prescaler = <1>;
