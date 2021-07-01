@@ -1,0 +1,15 @@
+description: PWM motors
+
+compatible: "motors"
+
+include: [base.yaml]
+
+properties:
+  label:
+    required: false
+
+  pwms:
+    type: phandle-array
+    required: false
+    description: >
+      PWM outputs for each motor

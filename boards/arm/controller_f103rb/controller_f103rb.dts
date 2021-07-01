@@ -29,6 +29,24 @@
       label = "LED red";
     };
   };
+
+  motors {
+    compatible = "motors";
+    status = "okay";
+    pwms = <&pwm0 1 100000 PWM_POLARITY_NORMAL>,
+           <&pwm0 2 100000 PWM_POLARITY_NORMAL>,
+           <&pwm0 3 100000 PWM_POLARITY_NORMAL>,
+           <&pwm0 4 100000 PWM_POLARITY_NORMAL>;
+  };
+};
+
+&timers1 {
+  status = "okay";
+  pwm0: pwm {
+    pinctrl-0 = <&tim1_ch1_pwm_pa8 &tim1_ch2_pwm_pa9
+                 &tim1_ch3_pwm_pa10 &tim1_ch4_pwm_pa11>;
+    status = "okay";
+  };
 };
 
 &i2c1 {
