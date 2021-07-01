@@ -18,9 +18,6 @@ manifest:
       revision: 45eca4ce10a83fffc0c66d9770380cd716150a42
       path: zephyr
       west-commands: scripts/west-commands.yml
-    - name: hal_st
-      revision: b52fdbf4b62439be9fab9bb4bae9690a42d2fb14
-      path: modules/hal/st
     - name: hal_stm32
       revision: 50283e0438d882a80fb681907664491c7042c817
       path: modules/hal/stm32
