@@ -1,0 +1,17 @@
+identifier: controller_f103rb
+name: Flight Controller F103RB
+type: mcu
+arch: arm
+ram: 20
+flash: 128
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - adc
+  - spi
+  - gpio
+  - i2c
+  - pwm
+  - watchdog
