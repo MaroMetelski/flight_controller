@@ -1,0 +1,11 @@
+# controller_f103rb configuration
+#
+# Copyright (c) 2021 Marek Metelski
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_CONTROLLER_F103RB
+
+config BOARD
+	default "controller_f103rb"
+
+endif # BOARD_CONTROLLER_F103RB
