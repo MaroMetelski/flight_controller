@@ -1,0 +1,10 @@
+menuconfig MOTORS
+       bool "enable motors"
+
+if MOTORS
+
+module = MOTORS
+module-str = motors
+source "subsys/logging/Kconfig.template.log_config"
+
+endif #MOTORS
