@@ -37,7 +37,7 @@
            <&pwm0 2 100000 PWM_POLARITY_NORMAL>,
            <&pwm0 3 100000 PWM_POLARITY_NORMAL>,
            <&pwm0 4 100000 PWM_POLARITY_NORMAL>;
-  };
+   };
 };
 
 &timers1 {
