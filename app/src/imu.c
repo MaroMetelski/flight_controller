@@ -86,19 +86,11 @@ static void calculate_current_position(float32_t *q_pos,
 		q_dt[i] *= 0.5;
 	}
 
-	// DON'T NORMALIZE DT?
-	// it's okay to pass the same array here (see function source)
-	/* arm_quaternion_normalize_f32(q_dt, q_dt, 1); */
-
 	// integrate, simple euler method
 	for (int i = 0; i < 4; i++) {
 		q_pos[i] = q_pos[i] + (q_dt[i] * (dt / 1000.0)); // dt ms to s
 	}
 
-	// dbg
-	/* for (int i = 0; i < 4; i++) { */
-	/* 	q_pos[i] = q_v[i]; // dt ms to s */
-	/* } */
 	arm_quaternion_normalize_f32(q_pos, q_pos, 1);
 }
 
