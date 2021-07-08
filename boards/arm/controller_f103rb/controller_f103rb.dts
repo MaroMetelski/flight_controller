@@ -60,14 +60,14 @@
 };
 
 &pll {
-  mul = <4>;
+  mul = <8>;
   clocks = <&clk_hsi>;
   status = "okay";
 };
 
 &rcc {
   clocks = <&pll>;
-  clock-frequency= <DT_FREQ_M(32)>;
+  clock-frequency = <DT_FREQ_M(32)>;
   ahb-prescaler = <1>;
   apb1-prescaler = <1>;
   apb2-prescaler = <1>;
